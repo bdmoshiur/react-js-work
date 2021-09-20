@@ -1,14 +1,18 @@
 import React from 'react';
 import Card from './Components/Card';
+import Data from './data.json'
 
 function App() {
+
+  let items = [];
+
+  for( let x = 0; x < Data.length; x++ ) {
+    items.push(<Card titleText={Data[x].title} docText={Data[x].doc} />);
+  }
     return (
         <div>
             <h2 className='headingclass'>Hello Test</h2>
-              <Card titleText='One Title' docText='This is a One Card' />
-              <Card titleText='Two Title' docText='This is a Two Card'/>
-              <Card titleText='Three Title' docText='This is a Three Card'/>
-              <Card titleText='Four Title' docText='This is a Four Card'/>
+              {items}
         </div>
     );
 }
