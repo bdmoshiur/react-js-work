@@ -6,10 +6,11 @@ const currentMonth = date.getMonth();
 const currentYear = date.getFullYear();
 
 function Card( props ) {
+    const { titleText, docText } = props;
     return (
         <div className='card'>
-            <h1 className='cardTitle'>{props.titleText}</h1>
-            <p className='cardDoc'>{ props.titleDoc}</p>
+            <h1 className='cardTitle'>{titleText}</h1>
+            <p className='cardDoc'>{docText}</p>
             <p className='cardFooter'>{currentDate + " /" + currentMonth + " /" + currentYear}</p>
         </div>
     );
